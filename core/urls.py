@@ -25,10 +25,10 @@ login_params = {
 }
 
 urlpatterns = [
-    path('coffees/', include('coffees.urls')),
-    path('admin/', admin.site.urls),
-    path('register/', register, name='register'),
     path('', lambda request: redirect('coffees:index'), name='root'),
     path('login/', LoginView.as_view(**login_params), name='login'),
     path('logout/', LogoutView.as_view(), name='logout'),
+    path('coffees/', include('coffees.urls')),
+    path('admin/', admin.site.urls),
+    path('register/', register, name='register'),
 ]
