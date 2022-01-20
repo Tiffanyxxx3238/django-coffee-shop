@@ -1,6 +1,8 @@
+from django.shortcuts import redirect
 from django.urls import path
-
+from django.contrib.auth.views import LoginView, LogoutView
 from . import views
+
 
 app_name = 'coffees'
 urlpatterns = [
@@ -15,3 +17,5 @@ urlpatterns = [
     # ex: /coffees/1/delete/
     path('<int:pk>/delete/', views.delete, name='delete'),
 ]
+
+
