@@ -32,3 +32,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', register, name='register'),
 ]
+handler403 = 'utils.error_handlers.permission_denied'
+handler404 = 'utils.error_handlers.page_not_found'
