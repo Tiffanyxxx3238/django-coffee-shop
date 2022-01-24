@@ -47,6 +47,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -117,6 +118,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATIC_ROOT = BASE_DIR / 'static'
+
 LOGIN_URL = '/login/'
 
 LOGIN_REDIRECT_URL = '/'
@@ -133,7 +136,6 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 
 EMAIL_USE_TLS = True
-
 
 try:
     with open(BASE_DIR / 'core/email.txt', 'r') as file:
